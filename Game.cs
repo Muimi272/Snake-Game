@@ -26,6 +26,8 @@ public class Game
     
     {
         Console.OutputEncoding = Encoding.Unicode;
+        _snake = new Snake();
+        _fruit = new Fruit(_snake.GetSnake());
         ChooseDifficulty();
         InitBoard();
         // 游戏主循环
