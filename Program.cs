@@ -22,13 +22,17 @@ internal class Program
             Console.Clear();
             Game game = new Game();
             game.GameStart();
-            
             // 询问是否再次游戏的循环
             while (true)
             {
                 Console.WriteLine("Do you want to play again? (Y/N)");
-                if (Console.ReadKey().Key == ConsoleKey.Y) break;
-                if (Console.ReadKey().Key == ConsoleKey.N)
+                string input = Console.ReadLine();
+                if (input == "Y" || input == "y")
+                {
+                    Console.Clear();
+                    break;
+                }
+                if (input == "N" || input == "n")
                 {
                     Console.WriteLine("Thank you for playing!");
                     Environment.Exit(0);
